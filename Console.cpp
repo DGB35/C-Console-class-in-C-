@@ -5,10 +5,13 @@
 namespace cl
 {
 	std::string Console::signature = "Copyright (c) 2020 DGB. All rights reserved.";
+	bool Console::isShown = false;
 
 	Console::Console()
 	{
-		WriteSignature();
+		if (!isShown)
+			WriteSignature();
+		isShown = true;
 	}
 
 	void Console::Clear()
