@@ -25,6 +25,7 @@ namespace cl
 
 	private:
 		static std::string signature;
+		static bool isShown;
 
 		void WriteSignature();
 		void Write() { return; }
