@@ -39,23 +39,20 @@ namespace cl
 	template<>
 	inline void Console::Write<bool>(const bool& value)
 	{
-		if (value)
-			std::cout << "true";
-		else
-			std::cout << "false";
+		value ? std::cout << "true" : std::cout << "false";
 	}
 
 	template<typename T, typename ...Other>
 	inline void Console::Write(const T& value, const Other& ... values)
 	{
-		std::cout << value;
+		Write(value);
 		Write(values...);
 	}
 
 	template<typename T, typename ...Other>
 	inline void Console::WriteLine(const T& value, const Other& ... values)
 	{
-		std::cout << value;
+		Write(value);
 		Write(values...);
 		std::cout << std::endl;
 	}
